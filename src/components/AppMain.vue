@@ -20,13 +20,15 @@
       type="text"
       v-model="movie.title"
     />
-    <button class="make" @click="makeDownloadCommand">コマンド生成</button>
-    <button v-if="showCopyButton" class="copy" @click="copyCommand">
-      クリップボードにコピー
+    <button class="make" @click="makeDownloadCommand">
+      コマンド生成･コピー
     </button>
     <span class="copied-message" v-if="showCopiedMessage"
       >コピーされました！</span
     >
+    <button v-if="false" class="copy" @click="copyCommand">
+      クリップボードにコピー
+    </button>
     <div class="commands">
       <p v-for="(command, key) in commands" :key="key">{{ command }}</p>
     </div>
@@ -91,7 +93,9 @@ export default {
 
       this.commands.push(completeMessage);
       this.commands.push(back);
-      this.showCopyButton = true;
+      // this.showCopyButton = true;
+
+      this.copyCommand();
     },
     makeNumTwoDigits(num) {
       if (num < 10) {
@@ -178,10 +182,11 @@ button {
 }
 
 button.make {
-  display: block;
   background: blue;
+  margin-right: 12px;
 }
 button.copy {
+  display: block;
   background: darkred;
   margin-right: 12px;
 }
