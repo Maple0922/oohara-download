@@ -40,16 +40,10 @@
 export default {
   data() {
     return {
-      // movie: {
-      //   url: "",
-      //   title: "",
-      //   count: "",
-      // },
       movie: {
-        url:
-          "https://www.resostream.jp/v/mp4/2021/S13N100_002_01.mp4/05949e4094a26c0a4df57b7db11e230fa3cacbaea3b3a2ab",
-        title: "財務会計論",
-        count: 13,
+        url: "",
+        title: "",
+        count: 2,
       },
       dividedUrl: {
         first: "",
