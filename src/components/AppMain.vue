@@ -82,8 +82,8 @@ export default {
 
       for (let i = 0; i < this.movie.count; i++) {
         const movIndex = this.makeNumTwoDigits(i + 1);
-        let command = `curl -s -o ${this.movie.title}_${movIndex}.mp4 ${this.dividedUrl.first}${movIndex}.mp4${this.dividedUrl.second}`;
-        let message = `echo "${
+        let command = `curl -# -o ${this.movie.title}_${movIndex}.mp4 ${this.dividedUrl.first}${movIndex}.mp4${this.dividedUrl.second}`;
+        let message = `echo "\n${
           this.movie.title
         }の動画をダウンロードしています…  ${i + 1}/${this.movie.count}"`;
         this.commands.push(message);
