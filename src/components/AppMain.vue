@@ -10,7 +10,6 @@
       placeholder="https://www.resostream.jp/v/mp4/..."
       type="text"
       v-model="movie.url"
-      @input="makeDownloadCommand"
     />
     <label>講義の動画数</label>
     <input class="number" type="number" v-model="movie.count" />
@@ -21,7 +20,7 @@
       type="text"
       v-model="movie.title"
     />
-    <button v-if="false" class="make" @click="makeDownloadCommand">
+    <button v-if="true" class="make" @click="makeDownloadCommand">
       コマンド生成･コピー
     </button>
     <span class="copied-message" v-if="showCopiedMessage"
@@ -97,15 +96,6 @@ export default {
       // this.showCopyButton = true;
       setTimeout(() => {
         this.copyCommand();
-        setTimeout(() => {
-          this.movie.url = "";
-          let titleIndex = this.movie.title.slice(-1);
-          const newTitle = this.movie.title.slice(0, -1);
-          titleIndex++;
-          this.movie.title = `${newTitle}${titleIndex.toString()}`;
-          console.log(this.movie.title);
-          console.log(titleIndex);
-        }, 500);
       }, 500);
     },
     makeNumTwoDigits(num) {
@@ -131,7 +121,7 @@ export default {
       this.showCopiedMessage = true;
       setTimeout(() => {
         this.showCopiedMessage = false;
-      }, 1000);
+      }, 2000);
     },
   },
 };
